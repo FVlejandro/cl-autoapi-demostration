@@ -3,7 +3,16 @@
 Automatización de pruebas de API con Postman, Newman y Bash.
 
 ## 🚀 Descripción
-Este proyecto permite ejecutar colecciones de Postman de forma automatizada usando un script Bash (`testrunner.sh`). Puedes ejecutarlo localmente o dentro de un contenedor Docker para máxima portabilidad.
+
+Este proyecto permite ejecutar colecciones de Postman de forma automatizada y escalable usando un script Bash (`testrunner.sh`). Puedes ejecutarlo localmente o dentro de un contenedor Docker para máxima portabilidad. Además, este modelo de automatización está diseñado para una fácil integración con pipelines de CI/CD, permitiendo ejecutar pruebas automáticamente en cada despliegue o integración.
+
+### Funcionalidades principales
+
+- **Ejecución selectiva por tags:** Puedes filtrar qué colecciones o escenarios ejecutar utilizando el parámetro `-t` (tag). El script solo ejecutará aquellas colecciones cuyo archivo de environment contenga el tag indicado, permitiendo una ejecución dirigida y eficiente.
+- **Inyección dinámica de variables:** Los archivos de environment (`.postman_environment.json`) pueden contener variables vacías, como `protocol`, `host` o `tag`. El script detecta estas variables y permite inyectar sus valores desde la línea de comandos usando los parámetros `-p`, `-h` y `-t`. Así, puedes reutilizar los mismos archivos de entorno en diferentes ejecuciones y ambientes.
+- **Escalabilidad:** Puedes agregar fácilmente nuevas colecciones y environments al proyecto. El script detecta automáticamente todos los archivos en las carpetas correspondientes, facilitando la ampliación del set de pruebas sin modificar el código.
+
+Esta demo incluye 2 colecciones de pruebas listas para usar: `LoginTest` y `UserTest`.
 
 ---
 
@@ -52,13 +61,6 @@ Este proyecto permite ejecutar colecciones de Postman de forma automatizada usan
    ```sh
    docker run --rm -it cl-autoapi-demostration -h "reqres.in" -t "login" -p "https"
    ```
-   Si quieres montar tus propias colecciones/environments:
-   ```sh
-   docker run --rm -it \
-     -v "$PWD/collections:/app/collections" \
-     -v "$PWD/environments:/app/environments" \
-     cl-autoapi-demostration -h "reqres.in" -t "login" -p "https"
-   ```
 
 ---
 
@@ -66,6 +68,7 @@ Este proyecto permite ejecutar colecciones de Postman de forma automatizada usan
 
 - `collections/` : Colecciones Postman
 - `environments/` : Archivos de entorno Postman
+- `scripts/` : Scripts auxiliares en caso de ser necesario
 - `testrunner.sh` : Script principal de ejecución
 - `Dockerfile` : Para empaquetar todo el entorno
 
@@ -79,7 +82,3 @@ sh testrunner.sh -h "reqres.in" -t "login" -p "https"
 
 ---
 
-## 📄 Notas
-- Puedes agregar más colecciones y environments en sus carpetas respectivas.
-- El script soporta filtrado por tag, host y protocolo.
-- Si tienes dudas o quieres contribuir, ¡abre un issue o PR!

@@ -53,7 +53,6 @@ Puedes agregar nuevas colecciones y entornos sin modificar el código. El script
    ```sh
    docker run --rm -it cl-autoapi-demostration -h "reqres.in" -t "login" -p "https"
    ```
-
 ---
 
 ### 🛠️ Stack tecnológico

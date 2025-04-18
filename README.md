@@ -38,17 +38,9 @@ sh testrunner.sh -h "reqres.in" -t "login" -p "https"
 
 ---
 ### 📈 Escalabilidad
-Puedes agregar nuevas colecciones y entornos sin modificar el código. El script detecta automáticamente los archivos dentro de las carpetas correspondientes.
----
 
-### 🛠️ Stack tecnológico
-  &emsp;
-  <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40" title="Postman"/>
-  &emsp;
-  <img src="https://github.com/user-attachments/assets/5aee0b39-cd80-48c9-bbd6-c1e778e70c3d" width="40" height="40" title="NPM">
-  &emsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="bash" width="40" height="40" title="Bash"/>
-  &emsp;
+Puedes agregar nuevas colecciones y entornos sin modificar el código. El script detecta automáticamente los archivos dentro de las carpetas correspondientes.
+
 
 ---
 ### 🐳 Cómo ejecutar (DEMO)
@@ -61,3 +53,14 @@ Puedes agregar nuevas colecciones y entornos sin modificar el código. El script
    ```sh
    docker run --rm -it cl-autoapi-demostration -h "reqres.in" -t "login" -p "https"
    ```
+
+---
+
+### 🛠️ Stack tecnológico
+  &emsp;
+  <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40" title="Postman"/>
+  &emsp;
+  <img src="https://github.com/user-attachments/assets/5aee0b39-cd80-48c9-bbd6-c1e778e70c3d" width="40" height="40" title="NPM">
+  &emsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="bash" width="40" height="40" title="Bash"/>
+  &emsp;

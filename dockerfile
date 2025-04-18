@@ -1,11 +1,18 @@
-FROM node:18-alpine
+FROM node:18-slim
 
-RUN npm install -g newman newman-reporter-htmlextra
+# Instala bash, jq y git
+RUN apt-get update && \
+    apt-get install -y bash jq git && \
+    npm install -g newman && \
+    apt-get clean
+
+# Copia el proyecto al contenedor
 WORKDIR /app
+COPY . .
 
-COPY ./collections ./collections
-COPY ./environments ./environments
+# Da permisos de ejecución al script
+RUN chmod +x testrunner.sh
 
-
-CMD ["/bin/bash"]
+# Comando por defecto: muestra ayuda
+CMD ["bash", "testrunner.sh"]
 

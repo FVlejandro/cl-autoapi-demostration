@@ -14,5 +14,5 @@ COPY . .
 RUN chmod +x testrunner.sh
 
 # Comando por defecto: muestra ayuda
-CMD ["bash", "testrunner.sh"]
+ENTRYPOINT ["bash", "testrunner.sh"]
 

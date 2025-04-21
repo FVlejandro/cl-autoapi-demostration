@@ -39,7 +39,7 @@ sh testrunner.sh -h "reqres.in" -t "login" -p "https"
 
 Puedes agregar nuevas colecciones y entornos sin modificar el código. El script detecta automáticamente los archivos dentro de las carpetas correspondientes.
 
-
+---
 
 ### 🛠️ Stack tecnológico
   &emsp;

@@ -11,9 +11,7 @@ Este proyecto es una **muestra técnica** que ilustra cómo:
 
 - Implementar ejecución selectiva mediante tags
 - Inyectar variables dinámicas en entornos de prueba
-- Estructurar un proyecto escalable para testing
-
-*Incluye colecciones de ejemplo (`LoginTest` y `UserTest`) con fines demostrativos.*
+- Estructurar un proyecto escalable para Api Automation testing
 
 ---
 
@@ -42,18 +40,6 @@ sh testrunner.sh -h "reqres.in" -t "login" -p "https"
 Puedes agregar nuevas colecciones y entornos sin modificar el código. El script detecta automáticamente los archivos dentro de las carpetas correspondientes.
 
 
----
-### 🐳 Cómo ejecutar (DEMO)
-
-1. Construye la imagen:
-   ```sh
-   docker build -t cl-autoapi-demostration .
-   ```
-2. Ejecuta el contenedor:
-   ```sh
-   docker run --rm -it cl-autoapi-demostration -h "reqres.in" -t "login" -p "https"
-   ```
----
 
 ### 🛠️ Stack tecnológico
   &emsp;
